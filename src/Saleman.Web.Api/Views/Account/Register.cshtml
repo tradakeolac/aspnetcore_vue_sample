@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="POST">
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" />
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input type="password" name="password" />
+    </div>
+
+    <div>
+        <label>Retype password</label>
+        <input type="password" name="repassword" />
+    </div>
+
+    <input type="submit" />
+</form>
+
+<div asp-validation-summary="All"></div>

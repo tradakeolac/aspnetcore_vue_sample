@@ -1,0 +1,243 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>Saleman.Web.Api</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Saleman.Web.Api</PackageId>
+    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="nlog.config">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SaleMan.Caching\Saleman.Caching.csproj" />
+    <ProjectReference Include="..\Saleman.Data.EntityFramework\Saleman.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\Saleman.Data\Saleman.Data.csproj" />
+    <ProjectReference Include="..\SaleMan.Ecommerce\Saleman.Ecommerce.csproj" />
+    <ProjectReference Include="..\Saleman.Model\Saleman.Model.csproj" />
+    <ProjectReference Include="..\Saleman.Service\Saleman.Service.csproj" />
+    <ProjectReference Include="..\Saleman.Web.Infrastructure\Saleman.Web.Infrastructure.csproj" />
+    <ProjectReference Include="..\Saleman.Web.ViewModel\Saleman.Web.ViewModel.csproj" />
+    <ProjectReference Include="..\Saleman.Search\Saleman.Search.csproj" />
+    <ProjectReference Include="..\WebFramework.Infrastructure\WebFramework.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0-rc1" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="AspNet.Security.OAuth.Validation" Version="1.0.0-*" />
+    <PackageReference Include="OpenIddict" Version="1.0.0-*" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="1.0.0-*" />
+    <PackageReference Include="OpenIddict.Mvc" Version="1.0.0-beta2-0591" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.1" />
+    <PackageReference Include="chocolatey" Version="0.10.3" />
+    <PackageReference Include="EnyimMemcachedCore" Version="1.1.1.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+  </ItemGroup> 
+  <ItemGroup>
+    <!-- Files not to show in IDE -->
+    <None Remove="admin\js\jquery.toggle.buttons.js" />
+    <None Remove="yarn.lock" />
+    <Compile Remove="uploaded\**" />
+
+    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Content Remove="ClientApp\**" />
+    <Content Remove="uploaded\**" />
+    <EmbeddedResource Remove="uploaded\**" />
+    <None Remove="uploaded\**" />
+  </ItemGroup> 
+  <ItemGroup>
+    <Content Include="admin\css\bootstrap-responsive.min.css" />
+    <Content Include="admin\css\bootstrap-wysihtml5.css" />
+    <Content Include="admin\css\bootstrap.min.css" />
+    <Content Include="admin\css\colorpicker.css" />
+    <Content Include="admin\css\datepicker.css" />
+    <Content Include="admin\css\font-awesome.css" />
+    <Content Include="admin\css\fullcalendar.css" />
+    <Content Include="admin\css\jquery.easy-pie-chart.css" />
+    <Content Include="admin\css\jquery.gritter.css" />
+    <Content Include="admin\css\matrix-login.css" />
+    <Content Include="admin\css\matrix-media.css" />
+    <Content Include="admin\css\matrix-style.css" />
+    <Content Include="admin\css\select2.css" />
+    <Content Include="admin\css\uniform.css" />
+    <Content Include="admin\font-awesome\css\font-awesome.css" />
+    <Content Include="admin\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="admin\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="admin\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="admin\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="admin\font-awesome\FontAwesome.otf" />
+    <Content Include="admin\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="admin\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="admin\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="admin\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="admin\font-awesome\font\FontAwesome.otf" />
+    <Content Include="admin\img\breadcrumb.png" />
+    <Content Include="admin\img\demo\av1.jpg" />
+    <Content Include="admin\img\demo\av2.jpg" />
+    <Content Include="admin\img\demo\av3.jpg" />
+    <Content Include="admin\img\demo\av4.jpg" />
+    <Content Include="admin\img\demo\av5.jpg" />
+    <Content Include="admin\img\demo\demo-image1.jpg" />
+    <Content Include="admin\img\demo\demo-image2.jpg" />
+    <Content Include="admin\img\demo\demo-image3.jpg" />
+    <Content Include="admin\img\demo\envelope.png" />
+    <Content Include="admin\img\demo\Thumbs.db" />
+    <Content Include="admin\img\gallery\imgbox1.jpg" />
+    <Content Include="admin\img\gallery\imgbox2.jpg" />
+    <Content Include="admin\img\gallery\imgbox3.jpg" />
+    <Content Include="admin\img\gallery\imgbox4.jpg" />
+    <Content Include="admin\img\gallery\imgbox5.jpg" />
+    <Content Include="admin\img\glyphicons-halflings-white.png" />
+    <Content Include="admin\img\gritter.png" />
+    <Content Include="admin\img\hue.png" />
+    <Content Include="admin\img\icons\16\book.png" />
+    <Content Include="admin\img\icons\16\cabinet.png" />
+    <Content Include="admin\img\icons\16\calendar.png" />
+    <Content Include="admin\img\icons\16\client.png" />
+    <Content Include="admin\img\icons\16\database.png" />
+    <Content Include="admin\img\icons\16\download.png" />
+    <Content Include="admin\img\icons\16\graph.png" />
+    <Content Include="admin\img\icons\16\home.png" />
+    <Content Include="admin\img\icons\16\lock.png" />
+    <Content Include="admin\img\icons\16\mail.png" />
+    <Content Include="admin\img\icons\16\pdf.png" />
+    <Content Include="admin\img\icons\16\people.png" />
+    <Content Include="admin\img\icons\16\piechart.png" />
+    <Content Include="admin\img\icons\16\search.png" />
+    <Content Include="admin\img\icons\16\shopping-bag.png" />
+    <Content Include="admin\img\icons\16\survey.png" />
+    <Content Include="admin\img\icons\16\tag.png" />
+    <Content Include="admin\img\icons\16\user.png" />
+    <Content Include="admin\img\icons\16\wallet.png" />
+    <Content Include="admin\img\icons\16\web.png" />
+    <Content Include="admin\img\icons\32\book.png" />
+    <Content Include="admin\img\icons\32\cabinet.png" />
+    <Content Include="admin\img\icons\32\calendar.png" />
+    <Content Include="admin\img\icons\32\client.png" />
+    <Content Include="admin\img\icons\32\dashboard.png" />
+    <Content Include="admin\img\icons\32\database.png" />
+    <Content Include="admin\img\icons\32\download.png" />
+    <Content Include="admin\img\icons\32\graph.png" />
+    <Content Include="admin\img\icons\32\home.png" />
+    <Content Include="admin\img\icons\32\lock.png" />
+    <Content Include="admin\img\icons\32\mail.png" />
+    <Content Include="admin\img\icons\32\pdf.png" />
+    <Content Include="admin\img\icons\32\people.png" />
+    <Content Include="admin\img\icons\32\piechart.png" />
+    <Content Include="admin\img\icons\32\search.png" />
+    <Content Include="admin\img\icons\32\shopping-bag.png" />
+    <Content Include="admin\img\icons\32\survey.png" />
+    <Content Include="admin\img\icons\32\tag.png" />
+    <Content Include="admin\img\icons\32\Thumbs.db" />
+    <Content Include="admin\img\icons\32\user.png" />
+    <Content Include="admin\img\icons\32\wallet.png" />
+    <Content Include="admin\img\icons\32\web.png" />
+    <Content Include="admin\img\larrow.png" />
+    <Content Include="admin\img\line.png" />
+    <Content Include="admin\img\logo.png" />
+    <Content Include="admin\img\menu-active.png" />
+    <Content Include="admin\img\rarrow.png" />
+    <Content Include="admin\img\saturation.png" />
+    <Content Include="admin\img\select2.png" />
+    <Content Include="admin\img\spinner.gif" />
+    <Content Include="admin\img\sprite.png" />
+    <Content Include="admin\img\Thumbs.db" />
+    <Content Include="admin\js\bootstrap-colorpicker.js" />
+    <Content Include="admin\js\bootstrap-datepicker.js" />
+    <Content Include="admin\js\bootstrap-wysihtml5.js" />
+    <Content Include="admin\js\bootstrap.js" />
+    <Content Include="admin\js\bootstrap.min.js" />
+    <Content Include="admin\js\excanvas.min.js" />
+    <Content Include="admin\js\fullcalendar.min.js" />
+    <Content Include="admin\js\jquery.dataTables.min.js" />
+    <Content Include="admin\js\jquery.easy-pie-chart.js" />
+    <Content Include="admin\js\jquery.flot.crosshair.js" />
+    <Content Include="admin\js\jquery.flot.min.js" />
+    <Content Include="admin\js\jquery.flot.pie.js" />
+    <Content Include="admin\js\jquery.flot.pie.min.js" />
+    <Content Include="admin\js\jquery.flot.resize.min.js" />
+    <Content Include="admin\js\jquery.flot.stack.js" />
+    <Content Include="admin\js\jquery.gritter.min.js" />
+    <Content Include="admin\js\jquery.min.js" />
+    <Content Include="admin\js\jquery.peity.min.js" />
+    <Content Include="admin\js\jquery.ui.custom.js" />
+    <Content Include="admin\js\jquery.uniform.js" />
+    <Content Include="admin\js\jquery.validate.js" />
+    <Content Include="admin\js\jquery.wizard.js" />
+    <Content Include="admin\js\masked.js" />
+    <Content Include="admin\js\matrix.calendar.js" />
+    <Content Include="admin\js\matrix.charts.js" />
+    <Content Include="admin\js\matrix.chat.js" />
+    <Content Include="admin\js\matrix.dashboard.js" />
+    <Content Include="admin\js\matrix.form_common.js" />
+    <Content Include="admin\js\matrix.form_validation.js" />
+    <Content Include="admin\js\matrix.interface.js" />
+    <Content Include="admin\js\matrix.js" />
+    <Content Include="admin\js\matrix.login.js" />
+    <Content Include="admin\js\matrix.popover.js" />
+    <Content Include="admin\js\matrix.tables.js" />
+    <Content Include="admin\js\matrix.wizard.js" />
+    <Content Include="admin\js\select2.min.js" />
+    <Content Include="admin\js\wysihtml5-0.3.0.js" />
+  </ItemGroup> 
+  <ItemGroup>
+    <Folder Include="blob\" />
+    <Folder Include="blob\" />
+    <Folder Include="blob\" />
+    <Folder Include="wwwroot\blob\" />
+    <Folder Include="wwwroot\blob\" />
+  </ItemGroup>
+  <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>

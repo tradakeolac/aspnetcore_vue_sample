@@ -1,0 +1,24 @@
+{
+  "PaymentSection": {
+    "Onepay": {
+      "ProviderName": "onepay",
+      "ProviderUrl": "",
+      "ReturnUrl": "",
+      "Salt": "",
+      "Version": "",
+      "Command": "",
+      "AccessCode": "",
+      "Merchant": ""
+    },
+    "Paypal": {
+      "ProviderName": "paypal",
+      "ProviderUrl": "",
+      "ReturnUrl": "",
+      "Salt": "",
+      "Version": "",
+      "Command": "",
+      "AccessCode": "",
+      "Merchant": ""
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>Saleman.Web.Infrastructure</AssemblyName>
+    <PackageId>Saleman.Web.Infrastructure</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saleman.Data.EntityFramework\Saleman.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\Saleman.Model\Saleman.Model.csproj" />
+    <ProjectReference Include="..\Saleman.Web.ViewModel\Saleman.Web.ViewModel.csproj" />
+    <ProjectReference Include="..\Saleman.Data\Saleman.Data.csproj" />
+    <ProjectReference Include="..\Saleman.Search\Saleman.Search.csproj" />
+    <ProjectReference Include="..\Saleman.Service\Saleman.Service.csproj" />
+    <ProjectReference Include="..\WebFramework.Infrastructure\WebFramework.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.0.0" />
+    <PackageReference Include="AutoMapper" Version="5.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ResourceManager\" />
+  </ItemGroup>
+
+</Project>

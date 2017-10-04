@@ -1,0 +1,16 @@
+﻿namespace Saleman.Service.Exceptions
+{
+    public enum ErrorCode
+    {
+        Add = 100,
+        Delete = 101,
+        Update = 102,
+        Get = 103,
+        ArgumentNull = 202,
+        Mapping = 203,
+        NotFoundObject = 401,
+        NotFoundService = 404,
+        Common = 500,
+        Unknow = 1000,
+    }
+}

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  saleman.web.api:
+    image: saleman.web.api
+    build:
+      context: ./src/Saleman.Web.Api
+      dockerfile: Dockerfile

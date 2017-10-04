@@ -1,0 +1,8 @@
+To: cong.nguyen@niteco.se
+Subject: Verify your email
+Message: Click <a href="http://localhost:64493/Account/VerifyEmail/ef44b4cb-a9c8-4b13-914d-1bf34fbaeecb?token=CfDJ8Dn3a72dEq1CqvraBvGK%2Bs9PXFuWiTIZMOQ4X181V%2FLoNORVJr%2B8dvnMcb9NbZSbGbRf4zbvlEiz065XtxrlpqRGjIvPMsgEe5WjaccV3vSTakM%2BJsZKfsKETcSZqP0z1P2qwFh7HhIUv9Xb3ieo6Q%2BZybGojwEfBuYb0Q%2FUWodX0L02U%2FgMaTWxbzZ%2BW%2BWyl8AbAZOn7NHHdUHWwHWGQ8CR%2BjURbeIjeKWShivN88OiWm6ghhs9UPwPJSy2VCiIPw%3D%3D">here</a> to verify your email
+
+To: nguyenthanhcongbkhn@gmail.com
+Subject: Verify your email
+Message: Click <a href="http://localhost:64493/Account/VerifyEmail/8639a45d-ff41-499d-b31f-1d47c8333f7d?token=CfDJ8KbnFOSuV3FBoNpK7JBqic%2F4BGNGs5fEQSnULy0X1hsnsznTLYCB2T%2BxAd60okb9n5xZKwbPMQWyH1UHJPbZWVbBVtJUYbCvQLTrmvAQJqtu0K2JQb%2FHxsLJJSe7Of%2BkHt1DCQtX5g6WU5qjkA%2FlqWf%2F7O0YbfprKfL4PqPomFYRrkkXyR8Dcs32SAmL%2FPAispAY2BCEON%2BZuMtLMmchKqvHL%2BVG7MhJDUrTLm5vaEuBnDy20onEqq2wzAysb1OTeg%3D%3D">here</a> to verify your email
+

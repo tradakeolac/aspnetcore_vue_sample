@@ -1,0 +1,130 @@
+﻿@{
+    Layout = "_AdminLayout";
+    ViewBag.Title = "Categories";
+}
+<div id="content-header">
+    <div id="breadcrumb"> <a href="@Url.Action("Index")" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Tables</a> </div>
+</div>
+<div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon"> <i class="icon-align-justify"></i> </span>
+                    <h5>Store infomation</h5>
+                </div>
+                <div class="widget-content nopadding hidden" id="createOrUpdateContainer">
+                </div>
+            </div>
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <input type="checkbox" id="title-checkbox" name="title-checkbox" />
+                    </span>
+                    <span class="icon">
+                        <button id="deleteSelected" class="icon icon-remove-sign">Delete selected items</button>
+                    </span>
+                    <span class="icon">
+                        <button id="newItem" class="icon icon-plus-sign">New</button>
+                    </span>
+                    <h5>Categories</h5>
+                </div>
+                <div id="contentData"></div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered table-striped with-check">
+                        <thead>
+                            <tr>
+                                <th><i class="icon-resize-vertical"></i></th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Store</th>
+                                <th>Parent</th>
+                                <th>Show on menu</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="categoryBody"></tbody>
+                    </table>
+
+                    <script type="text/html" id="addOrUpdateTemplate">
+                        <form id="createForm" action="#" method="post" class="form-horizontal">
+                            <input type="hidden" value="{{id}}" name="id" />
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    <input type="text" class="span11" name="name" value="{{name}}" placeholder="Category name" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Description</label>
+                                <div class="controls">
+                                    <textarea class="span11" name="description" maxlength="1000" placeholder="Category description">{{description}}</textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Select store</label>
+                                <div class="controls store-selection">
+                                    <select id="stores"  name="storeId">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Select parent category</label>
+                                <div class="controls">
+                                    <select id="categories">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Show on menu</label>
+                                <div class="controls">
+                                    <input type="checkbox" maxlength="300" name="showonmenu" value="true"/>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </form>
+                    </script>
+
+                    <script type="text/html" id="categoryTemplate">
+                        <tr id="{{id}}" data-id="{{id}}">
+                            <td data-property="id" data-value="{{id}}" class="data__property"><input type="checkbox" data-id="{{id}}" class='data-checkbox' /></td>
+                            <td data-property="name" data-value="{{name}}" class="center data__property">{{name}}</td>
+                            <td data-property="description" data-value="{{description}}" class="center data__property">{{description}}</td>
+                            <td data-property="description" data-value="{{storeName}}" class="center data__property">{{storeName}}</td>
+                            <td data-property="description" data-value="{{parentName}}" class="center data__property">{{parentName}}</td>
+                            <td data-property="description" data-value="{{showOnMenu}}" class="center data__property">{{showOnMenu}}</td>
+                            <td class="center">
+                                <span class="icon icon-edit data__action data__action-edit" data-id="{{id}}"></span>
+                                <span class="icon icon-remove-sign data__action data__action-delete" data-id="{{id}}"></span>
+                            </td>
+                        </tr>
+                    </script>
+
+                    <script type="text/html" id="storeSelectionTemplate">
+                        <option value="{{id}}">{{name}}</option>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="contentRender"></div>
+    </div>
+</div>
+@section moduleScript
+ {
+    <script src="~/dist/admin/js/modules/module.handler.categories.js"></script>
+
+    <script>
+        moduleLocator.register(categoryModule);
+
+        moduleController.activeModule('category');
+
+        moduleController.initialize();
+    </script>
+}
